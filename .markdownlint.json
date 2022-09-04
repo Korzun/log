@@ -1,0 +1,8 @@
+{
+  "default": true,
+  "line-length": { "tables": false } ,
+  "no-duplicate-header": false,
+  "no-hard-tabs": true,
+  "no-inline-html": false,
+  "ul-indent": { "indent": 2 }
+}
