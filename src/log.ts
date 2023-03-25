@@ -58,44 +58,37 @@ export const create: Create = (options = {}) => {
   if (prefixOutput) {
     switch (level) {
       case Level.Debug:
-        logger.debug = (...optionalParams: any[]) =>
+        logger.debug = (...optionalParams) =>
           console.debug(prefix.debug, ...optionalParams);
       case Level.Info:
-        logger.info = (...optionalParams: any[]) =>
+        logger.info = (...optionalParams) =>
           console.info(prefix.info, ...optionalParams);
-        logger.okay = (...optionalParams: any[]) =>
+        logger.okay = (...optionalParams) =>
           console.info(prefix.okay, ...optionalParams);
-        logger.start = (...optionalParams: any[]) =>
+        logger.start = (...optionalParams) =>
           console.info(prefix.start, ...optionalParams);
       case Level.Warning:
-        logger.warn = (...optionalParams: any[]) =>
+        logger.warn = (...optionalParams) =>
           console.warn(prefix.warn, ...optionalParams);
       case Level.Error:
-        logger.error = (...optionalParams: any[]) =>
+        logger.error = (...optionalParams) =>
           console.error(prefix.error, ...optionalParams);
-        logger.fail = (...optionalParams: any[]) =>
+        logger.fail = (...optionalParams) =>
           console.error(prefix.fail, ...optionalParams);
     }
   } else {
     switch (level) {
       case Level.Debug:
-        logger.debug = (...optionalParams: any[]) =>
-          console.debug(...optionalParams);
+        logger.debug = (...optionalParams) => console.debug(...optionalParams);
       case Level.Info:
-        logger.info = (...optionalParams: any[]) =>
-          console.info(...optionalParams);
-        logger.okay = (...optionalParams: any[]) =>
-          console.info(...optionalParams);
-        logger.start = (...optionalParams: any[]) =>
-          console.info(...optionalParams);
+        logger.info = (...optionalParams) => console.info(...optionalParams);
+        logger.okay = (...optionalParams) => console.info(...optionalParams);
+        logger.start = (...optionalParams) => console.info(...optionalParams);
       case Level.Warning:
-        logger.warn = (...optionalParams: any[]) =>
-          console.warn(...optionalParams);
+        logger.warn = (...optionalParams) => console.warn(...optionalParams);
       case Level.Error:
-        logger.error = (...optionalParams: any[]) =>
-          console.error(...optionalParams);
-        logger.fail = (...optionalParams: any[]) =>
-          console.error(...optionalParams);
+        logger.error = (...optionalParams) => console.error(...optionalParams);
+        logger.fail = (...optionalParams) => console.error(...optionalParams);
     }
   }
 
