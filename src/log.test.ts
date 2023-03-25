@@ -131,7 +131,7 @@ describe('log', () => {
         expect(log.failPart('foo')).toEqual('\x1b[31mfoo\x1b[0m');
         expect(log.infoPart('foo')).toEqual('\x1b[36mfoo\x1b[0m');
         expect(log.okayPart('foo')).toEqual('\x1b[32mfoo\x1b[0m');
-        expect(log.startPart('foo')).toEqual('\x1b[57mfoo\x1b[0m');
+        expect(log.startPart('foo')).toEqual('\x1b[35mfoo\x1b[0m');
         expect(log.warnPart('foo')).toEqual('\x1b[33mfoo\x1b[0m');
       });
     });
