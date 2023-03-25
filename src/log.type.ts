@@ -10,21 +10,21 @@ export type MessagePart = (message?: any) => string;
 export type Log = (message?: any, ...optionalParams: any[]) => void;
 
 export interface Logger {
-  debug: Log;
-  error: Log;
-  fail: Log;
-  info: Log;
-  okay: Log;
-  warn: Log;
   colophonPart: MessagePart;
+  debug: Log;
   debugPart: MessagePart;
+  error: Log;
   errorPart: MessagePart;
+  fail: Log;
+  failPart: MessagePart;
+  info: Log;
   infoPart: MessagePart;
+  okay: Log;
   okayPart: MessagePart;
   start: Log;
   startPart: MessagePart;
+  warn: Log;
   warnPart: MessagePart;
-  failPart: MessagePart;
 }
 
 export type Options = {
