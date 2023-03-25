@@ -40,6 +40,7 @@ describe('log', () => {
         log.debug('foo');
         log.info('foo');
         log.okay('foo');
+        log.start('foo');
         log.warn('foo');
         log.error('foo');
         log.fail('foo');
@@ -56,6 +57,7 @@ describe('log', () => {
         log.debug('foo');
         log.info('foo');
         log.okay('foo');
+        log.start('foo');
         log.warn('foo');
         log.error('foo');
         log.fail('foo');
@@ -72,6 +74,7 @@ describe('log', () => {
         log.debug('foo');
         log.info('foo');
         log.okay('foo');
+        log.start('foo');
         log.warn('foo');
         log.error('foo');
         log.fail('foo');
@@ -88,11 +91,12 @@ describe('log', () => {
         log.debug('foo');
         log.info('foo');
         log.okay('foo');
+        log.start('foo');
         log.warn('foo');
         log.error('foo');
         log.fail('foo');
         expect(debugSpy).not.toHaveBeenCalled();
-        expect(infoSpy).toHaveBeenCalledTimes(2);
+        expect(infoSpy).toHaveBeenCalledTimes(3);
         expect(warnSpy).toHaveBeenCalledTimes(1);
         expect(errorSpy).toHaveBeenCalledTimes(2);
       });
@@ -104,11 +108,12 @@ describe('log', () => {
         log.debug('foo');
         log.info('foo');
         log.okay('foo');
+        log.start('foo');
         log.warn('foo');
         log.error('foo');
         log.fail('foo');
         expect(debugSpy).toHaveBeenCalledTimes(1);
-        expect(infoSpy).toHaveBeenCalledTimes(2);
+        expect(infoSpy).toHaveBeenCalledTimes(3);
         expect(warnSpy).toHaveBeenCalledTimes(1);
         expect(errorSpy).toHaveBeenCalledTimes(2);
       });
@@ -126,6 +131,7 @@ describe('log', () => {
         expect(log.failPart('foo')).toEqual('\x1b[31mfoo\x1b[0m');
         expect(log.infoPart('foo')).toEqual('\x1b[36mfoo\x1b[0m');
         expect(log.okayPart('foo')).toEqual('\x1b[32mfoo\x1b[0m');
+        expect(log.startPart('foo')).toEqual('\x1b[57mfoo\x1b[0m');
         expect(log.warnPart('foo')).toEqual('\x1b[33mfoo\x1b[0m');
       });
     });
@@ -139,6 +145,7 @@ describe('log', () => {
         expect(log.failPart('foo')).toEqual('foo');
         expect(log.infoPart('foo')).toEqual('foo');
         expect(log.okayPart('foo')).toEqual('foo');
+        expect(log.startPart('foo')).toEqual('foo');
         expect(log.warnPart('foo')).toEqual('foo');
       });
     });
@@ -156,12 +163,14 @@ describe('log', () => {
         log.debug('foo');
         log.info('foo');
         log.okay('foo');
+        log.start('foo');
         log.warn('foo');
         log.error('foo');
         log.fail('foo');
         expect(debugSpy).toHaveBeenCalledWith('[DEBUG]', 'foo');
         expect(infoSpy).toHaveBeenCalledWith('[INFO]', 'foo');
         expect(infoSpy).toHaveBeenCalledWith('[OKAY]', 'foo');
+        expect(infoSpy).toHaveBeenCalledWith('[STRT]', 'foo');
         expect(warnSpy).toHaveBeenCalledWith('[WARN]', 'foo');
         expect(errorSpy).toHaveBeenCalledWith('[ERROR]', 'foo');
         expect(errorSpy).toHaveBeenCalledWith('[FAIL]', 'foo');
@@ -178,10 +187,12 @@ describe('log', () => {
         log.debug('foo');
         log.info('foo');
         log.okay('foo');
+        log.start('foo');
         log.warn('foo');
         log.error('foo');
         log.fail('foo');
         expect(debugSpy).toHaveBeenCalledWith('foo');
+        expect(infoSpy).toHaveBeenCalledWith('foo');
         expect(infoSpy).toHaveBeenCalledWith('foo');
         expect(infoSpy).toHaveBeenCalledWith('foo');
         expect(warnSpy).toHaveBeenCalledWith('foo');

@@ -21,6 +21,8 @@ export interface Logger {
   errorPart: MessagePart;
   infoPart: MessagePart;
   okayPart: MessagePart;
+  start: Log;
+  startPart: MessagePart;
   warnPart: MessagePart;
   failPart: MessagePart;
 }
