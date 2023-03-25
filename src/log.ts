@@ -22,6 +22,8 @@ export const create: Create = (options = {}) => {
         infoPart: (message) => `\x1b[36m${message}\x1b[0m`,
         okay: () => {},
         okayPart: (message) => `\x1b[32m${message}\x1b[0m`,
+        start: () => {},
+        startPart: (message) => `\x1b[57m${message}\x1b[0m`,
         warn: () => {},
         warnPart: (message) => `\x1b[33m${message}\x1b[0m`,
       }
@@ -37,6 +39,8 @@ export const create: Create = (options = {}) => {
         infoPart: (message) => message,
         okay: () => {},
         okayPart: (message) => message,
+        start: () => {},
+        startPart: (message) => message,
         warn: () => {},
         warnPart: (message) => message,
       };
@@ -47,6 +51,7 @@ export const create: Create = (options = {}) => {
     fail: `[${logger.errorPart('FAIL')}]`,
     info: `[${logger.infoPart('INFO')}]`,
     okay: `[${logger.okayPart('OKAY')}]`,
+    start: `[${logger.startPart('STRT')}]`,
     warn: `[${logger.warnPart('WARN')}]`,
   };
 
@@ -60,6 +65,8 @@ export const create: Create = (options = {}) => {
           console.info(prefix.info, ...optionalParams);
         logger.okay = (...optionalParams: any[]) =>
           console.info(prefix.okay, ...optionalParams);
+        logger.start = (...optionalParams: any[]) =>
+          console.info(prefix.start, ...optionalParams);
       case Level.Warning:
         logger.warn = (...optionalParams: any[]) =>
           console.warn(prefix.warn, ...optionalParams);
@@ -78,6 +85,8 @@ export const create: Create = (options = {}) => {
         logger.info = (...optionalParams: any[]) =>
           console.info(...optionalParams);
         logger.okay = (...optionalParams: any[]) =>
+          console.info(...optionalParams);
+        logger.start = (...optionalParams: any[]) =>
           console.info(...optionalParams);
       case Level.Warning:
         logger.warn = (...optionalParams: any[]) =>
