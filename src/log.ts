@@ -23,7 +23,7 @@ export const create: Create = (options = {}) => {
         okay: () => {},
         okayPart: (message) => `\x1b[32m${message}\x1b[0m`,
         start: () => {},
-        startPart: (message) => `\x1b[57m${message}\x1b[0m`,
+        startPart: (message) => `\x1b[35m${message}\x1b[0m`,
         warn: () => {},
         warnPart: (message) => `\x1b[33m${message}\x1b[0m`,
       }
