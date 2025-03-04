@@ -1,6 +1,7 @@
 {
   "extends": "./tsconfig.build.json",
   "compilerOptions": {
+    "importHelpers": false,
     "moduleResolution": "node",
     "module": "ES2015",
     "outDir": "dist/esm"

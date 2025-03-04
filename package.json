@@ -3,7 +3,7 @@
   "description": "Safe, Simple, Glanceable Logging",
   "private": false,
   "license": "MIT",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "keywords": [
     "cli",
     "console",
